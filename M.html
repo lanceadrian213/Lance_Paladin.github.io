@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header class="nav">
+    
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            Paladin's Game Gallery
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="M.html">Minecraft</a>
+          <a href="CSGO.html">CSGO</a>
+          <a href="RE.html">Resident Evil</a>
+  
+        </div>
+    
+</header>
+<body>
+
+    <div class="slideshow-container">
+
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://www.ionos.com/digitalguide/fileadmin/_processed_/1/c/csm_linux-minecraft-server-t_dc835841c1.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Survival1.17.png/revision/latest?cb=20210821180103" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://www.popsci.com/uploads/2022/02/03/Minecraft-Tips-Parents.jpeg?auto=webp&width=1440&height=1080" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+
+    <div class="container">
+      <div id="modal" class="modal">
+        <div class="modal-container">
+          <img id="current" src="" alt="">
+        </div>
+      </div>
+      <div class="imgs">
+        <div class="img-container">
+          <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Survival1.17.png/revision/latest?cb=20210821180103" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.popsci.com/uploads/2022/02/03/Minecraft-Tips-Parents.jpeg?auto=webp&width=1440&height=1080" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.ionos.com/digitalguide/fileadmin/_processed_/1/c/csm_linux-minecraft-server-t_dc835841c1.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.charlieintel.com/wp-content/uploads/2023/02/minecraft-how-to-allocate-more-ram.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://assets-prd.ignimgs.com/2022/06/22/minecraft-animal-farmhouse-1655867417275.png" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://i.insider.com/5570532e69bedd8b3c8e9229?width=1000&format=jpeg&auto=webp" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.nme.com/wp-content/uploads/2021/08/Minecraft@2000x1270-696x442.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://i4.hurimg.com/i/hurriyet/75/750x422/61654f1d4e3fe00ccc12d019.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://img.lemde.fr/2012/05/14/0/92/864/576/1440/960/60/0/ill_1701005_6005_minecraft.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+  
+  
+  
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+
+
+  <script>
+    const current = document.querySelector('#current');
+let enlargeMessages = document.querySelectorAll('.photo-overlay h1');
+const modal = document.getElementById('modal');
+const overlay = document.querySelectorAll('.photo-overlay');
+const modalContainer = document.querySelector('.modal-container');
+
+
+for (let i =0; i < enlargeMessages.length; i++){
+  enlargeMessages[i].addEventListener('click', imgClick);
+}
+
+window.addEventListener('click', clickOutside);
+
+function imgClick(e){
+  modal.style.display = 'block';
+  current.src = e.target.parentNode.previousElementSibling.src;
+}
+
+function clickOutside(e){
+  if(e.target == modal || e.target == modalContainer){
+  modal.style.display = 'none';}
+}
+
+
+$('.slider').each(function() {
+  var $this = $(this);
+  var $group = $this.find('.slide_group');
+  var $slides = $this.find('.slide');
+  var bulletArray = [];
+  var currentIndex = 0;
+  var timeout;
+  
+  function move(newIndex) {
+    var animateLeft, slideLeft;
+    
+    advance();
+    
+    if ($group.is(':animated') || currentIndex === newIndex) {
+      return;
+    }
+    
+    bulletArray[currentIndex].removeClass('active');
+    bulletArray[newIndex].addClass('active');
+    
+    if (newIndex > currentIndex) {
+      slideLeft = '100%';
+      animateLeft = '-100%';
+    } else {
+      slideLeft = '-100%';
+      animateLeft = '100%';
+    }
+    
+    $slides.eq(newIndex).css({
+      display: 'block',
+      left: slideLeft
+    });
+    $group.animate({
+      left: animateLeft
+    }, function() {
+      $slides.eq(currentIndex).css({
+        display: 'none'
+      });
+      $slides.eq(newIndex).css({
+        left: 0
+      });
+      $group.css({
+        left: 0
+      });
+      currentIndex = newIndex;
+    });
+  }
+  
+  function advance() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      if (currentIndex < ($slides.length - 1)) {
+        move(currentIndex + 1);
+      } else {
+        move(0);
+      }
+    }, 4000);
+  }
+  
+  $('.next_btn').on('click', function() {
+    if (currentIndex < ($slides.length - 1)) {
+      move(currentIndex + 1);
+    } else {
+      move(0);
+    }
+  });
+  
+  $('.previous_btn').on('click', function() {
+    if (currentIndex !== 0) {
+      move(currentIndex - 1);
+    } else {
+      move(3);
+    }
+  });
+  
+  $.each($slides, function(index) {
+    var $button = $('<a class="slide_btn">&bull;</a>');
+    
+    if (index === currentIndex) {
+      $button.addClass('active');
+    }
+    $button.on('click', function() {
+      move(index);
+    }).appendTo('.slide_buttons');
+    bulletArray.push($button);
+  });
+  
+  advance();
+});
+
+
+        </script>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+        </script>
+</html>

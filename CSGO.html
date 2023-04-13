@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header class="nav">
+    
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            Paladin's Game Gallery
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="M.html">Minecraft</a>
+          <a href="CSGO.html">CSGO</a>
+          <a href="RE.html">Resident Evil</a>
+  
+        </div>
+    
+</header>
+<body>
+
+    <div class="slideshow-container">
+
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTgwMjQxNTc4NTYyOTU0NTg0/csgo-scams.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://static.gosugamers.net/6b/3f/d4/2b3b6b2fa17908ebdc32b1ebbde54f70da5546c136fdafcc3dc520d30a.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://i.pcmag.com/imagery/reviews/03aaBruU4YchhD6MkESCRns-7..v1569472478.png" style="width:100%">
+          <div class="text"></div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+
+    <div class="container">
+      <div id="modal" class="modal">
+        <div class="modal-container">
+          <img id="current" src="" alt="">
+        </div>
+      </div>
+      <div class="imgs">
+        <div class="img-container">
+          <img src="https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTgwMjQxNTc4NTYyOTU0NTg0/csgo-scams.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://static.gosugamers.net/6b/3f/d4/2b3b6b2fa17908ebdc32b1ebbde54f70da5546c136fdafcc3dc520d30a.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://i.pcmag.com/imagery/reviews/03aaBruU4YchhD6MkESCRns-7..v1569472478.png" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.logicalincrements.com/assets/img/articles/csgo/gamesettings/AllLow.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://insider-gaming.com/wp-content/uploads/2023/03/CSGOFeatured.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://i0.wp.com/codigoesports.com/wp-content/uploads/2023/03/CS-GO-Source-2-inferno.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.buff.game/wp-content/uploads/2019/06/csgo-nuke-x-1024x576.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://steamuserimages-a.akamaihd.net/ugc/447330122528066194/D6CF72B44C5F85052E243DC4A99A2217587311A1/" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="https://www.destructoid.com/wp-content/uploads/2023/04/csgo-one-bullet-ace-awp-video.jpg" alt="">
+          <div class="photo-overlay">
+            <h1>Click Me</h1>
+          </div>
+        </div>
+  
+  
+  
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+
+
+  <script>
+    const current = document.querySelector('#current');
+let enlargeMessages = document.querySelectorAll('.photo-overlay h1');
+const modal = document.getElementById('modal');
+const overlay = document.querySelectorAll('.photo-overlay');
+const modalContainer = document.querySelector('.modal-container');
+
+
+for (let i =0; i < enlargeMessages.length; i++){
+  enlargeMessages[i].addEventListener('click', imgClick);
+}
+
+window.addEventListener('click', clickOutside);
+
+function imgClick(e){
+  modal.style.display = 'block';
+  current.src = e.target.parentNode.previousElementSibling.src;
+}
+
+function clickOutside(e){
+  if(e.target == modal || e.target == modalContainer){
+  modal.style.display = 'none';}
+}
+
+
+$('.slider').each(function() {
+  var $this = $(this);
+  var $group = $this.find('.slide_group');
+  var $slides = $this.find('.slide');
+  var bulletArray = [];
+  var currentIndex = 0;
+  var timeout;
+  
+  function move(newIndex) {
+    var animateLeft, slideLeft;
+    
+    advance();
+    
+    if ($group.is(':animated') || currentIndex === newIndex) {
+      return;
+    }
+    
+    bulletArray[currentIndex].removeClass('active');
+    bulletArray[newIndex].addClass('active');
+    
+    if (newIndex > currentIndex) {
+      slideLeft = '100%';
+      animateLeft = '-100%';
+    } else {
+      slideLeft = '-100%';
+      animateLeft = '100%';
+    }
+    
+    $slides.eq(newIndex).css({
+      display: 'block',
+      left: slideLeft
+    });
+    $group.animate({
+      left: animateLeft
+    }, function() {
+      $slides.eq(currentIndex).css({
+        display: 'none'
+      });
+      $slides.eq(newIndex).css({
+        left: 0
+      });
+      $group.css({
+        left: 0
+      });
+      currentIndex = newIndex;
+    });
+  }
+  
+  function advance() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      if (currentIndex < ($slides.length - 1)) {
+        move(currentIndex + 1);
+      } else {
+        move(0);
+      }
+    }, 4000);
+  }
+  
+  $('.next_btn').on('click', function() {
+    if (currentIndex < ($slides.length - 1)) {
+      move(currentIndex + 1);
+    } else {
+      move(0);
+    }
+  });
+  
+  $('.previous_btn').on('click', function() {
+    if (currentIndex !== 0) {
+      move(currentIndex - 1);
+    } else {
+      move(3);
+    }
+  });
+  
+  $.each($slides, function(index) {
+    var $button = $('<a class="slide_btn">&bull;</a>');
+    
+    if (index === currentIndex) {
+      $button.addClass('active');
+    }
+    $button.on('click', function() {
+      move(index);
+    }).appendTo('.slide_buttons');
+    bulletArray.push($button);
+  });
+  
+  advance();
+});
+
+
+        </script>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+        </script>
+</html>
